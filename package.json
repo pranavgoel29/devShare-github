@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "easyqrcodejs": "^4.4.13",
+    "require": "^2.4.20"
+  }
+}
