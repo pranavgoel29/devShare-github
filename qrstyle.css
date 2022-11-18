@@ -77,7 +77,7 @@ body {
     text-decoration: none;
 }
 
-.btn {
+.btnq {
     text-decoration: none;
     min-width: 84px;
     padding: 12px 16px;
@@ -92,11 +92,11 @@ body {
     font-size: 14px;
     font-weight: bold;
   }
-  .btn:hover {
+  .btnq:hover {
     cursor: pointer;
     background-color: var(--btn-hover-qr);
   }
-  .btn:active {
+  .btnq:active {
     transform: scale(0.975);
   }
 
@@ -112,7 +112,7 @@ h3 {
     padding: 10px;
 }
 
-p {
+p #subcode{
     text-align: center;
     color: hsl(220, 15%, 55%);
     margin-bottom: 13px;
