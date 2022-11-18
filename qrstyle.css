@@ -1,10 +1,10 @@
 :root {
 
-    --lm-bg: #141D2F;
-    --lm-bg-content: #1E2A47;
-    --lm-text: white;
-    --lm-text-alt: white;
-    --lm-shadow-xl: rgba(70, 88, 109, 0.15);
+    --lm-bg-qr: #141D2F;
+    --lm-bg-content-qr: #1E2A47;
+    --lm-text-qr: white;
+    --lm-text-alt-qr: white;
+    --lm-shadow-xl-qr: rgba(70, 88, 109, 0.15);
 
 
     --lm-icon-bg: brightness(1000%);
@@ -18,8 +18,8 @@
       --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
       --lm-icon-bg: brightness(100%); */
     /* Btn */
-    --btn: #0079ff;
-    --btn-hover: #60abff;
+    --btn-qr: #0079ff;
+    --btn-hover-qr: #60abff;
 }
 
 * {
@@ -35,19 +35,20 @@
     align-items: center;
 }
 
-#subcode{
-    margin-top: 20px;
-}
-
 body {
-    background-color: var(--lm-bg);
+    background-color: var(--lm-bg-qr);
     font-size: 13px;
-    color: var(--lm-text);
+    color: var(--lm-text-qr);
     width: 100%;
     position: relative;
     height: 100vh;
 
 }
+
+#subcode{
+    margin-top: 20px;
+}
+
 
 .conatiner {
     width: 327px;
@@ -84,7 +85,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--btn);
+    background-color: var(--btn-qr);
     border: none;
     border-radius: 10px;
     color: white;
@@ -93,7 +94,7 @@ body {
   }
   .btn:hover {
     cursor: pointer;
-    background-color: var(--btn-hover);
+    background-color: var(--btn-hover-qr);
   }
   .btn:active {
     transform: scale(0.975);
