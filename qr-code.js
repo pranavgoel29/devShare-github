@@ -12,8 +12,8 @@ var options = {
   width: 240,
   height: 240,
   quietZone: 0,
-  colorDark: "#000000",
-  colorLight: "#ffffff",
+  colorDark: "#ffffff",
+  colorLight: "#000000",
 
   // PI_TL: '#b7d28d', // Position Inner - Top Left 
   // PO_TR: '#aa5b71', // Position Outer - Top Right 
@@ -23,7 +23,7 @@ var options = {
 
   logo: pdata.avatar_url, // LOGO
    					logoWidth:50, 
-  					logoHeight:50,
+  					logoHeight:50,  
   PI: '#f55066',
 
   correctLevel: QRCode.CorrectLevel.H
