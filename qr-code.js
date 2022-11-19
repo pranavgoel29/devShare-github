@@ -25,7 +25,7 @@ var options = {
   					logoHeight:50,  
   PI: '#f55066',
 
-  correctLevel: QRCode.CorrectLevel.H
+  correctLevel: QRCode.CorrectLevel.H,
 
 
   // width: 240, // Widht
@@ -93,13 +93,25 @@ var options = {
   // 				//PI: '#f55066',
 
   // 				correctLevel: QRCode.CorrectLevel.H // L, M, Q, H
+  crossOrigin: 'Anonymous',
 
 };
+
+
 
 qcode.innerHTML = `Scan the QR Code to Visit ${pdata.name} Github page 🥳`;
 // Create QRCode Object
 new QRCode(document.getElementById("qrcode"), options);
 
 
-  
+  const canvas = document.querySelector('canvas'),
+  saveimg = document.querySelector('.save')
 
+  saveimg.addEventListener('click', ()=>{
+    const link = document.createElement('a')
+    link.download = `${pdata.login}.png`
+    link.href = canvas.toDataURL()
+    link.click()
+  })
+
+  

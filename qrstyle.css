@@ -82,6 +82,7 @@ body {
     min-width: 84px;
     padding: 12px 16px;
     margin: auto;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
