@@ -29,6 +29,10 @@
     font-family: "Space Mono", monospace;
 }
 
+.title{
+    margin-bottom: 30px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -58,7 +62,7 @@ body {
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
-    gap: 36px;
+    /* gap: 36px; */
 }
 
 #card {
@@ -71,6 +75,13 @@ body {
     background-color: #1E2A47;
     padding: 18px;
     border-radius: 15px;
+}
+
+#cardp{
+    margin-bottom: 10px;
+    padding: 20px;
+    /* border-radius: 20px; */
+    background-color: #141d2f;
 }
 
 #btn-back{
@@ -120,6 +131,7 @@ p #subcode{
 }
 
 .attribution {
+    margin-top: 40px;
     font-size: 11px;
     text-align: center;
 }

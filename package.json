@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "easyqrcodejs": "^4.4.13",
-    "require": "^0.4.4"
+    "easyqrcodejs": "^4.4.13"
   }
 }
