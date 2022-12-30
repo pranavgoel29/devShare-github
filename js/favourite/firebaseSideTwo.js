@@ -57,8 +57,19 @@ let unsubscribe;
 // console.log(pdata.login)
 
 const renderUser = doc => {
+    // const items = querySnapshot.docs.map(doc => {
+    //     const favhandle = doc.data().favourite;
+
+    //     // var d = time.toDate().toLocaleDateString();
+    //     // var t = time.toDate().toLocaleTimeString();
+
+    //     // console.log(t);
+
+    //     return `Handle: ${favhandle}`
+
+    // });
     console.log(doc.data())
-    const tr = `<p style='margin-top: 10px;' data-id='${doc.id}' >Handle: ${doc.data().login}<br><div style="margin-top: 5px;"><a href="./qr-code.html"><button style='margin-right: 10px;' class="btn btn-primary btn-qrcodeg">Generate QR</button></a><button style='margin-right: 10px;' class="btn btn-primary btn-delete">Remove from Favourite</button></div></p>`
+    const tr = `<p style='margin-top: 20px;' data-id='${doc.id}' >Handle: ${doc.data().login}<br><a href="./qr-code.html"><button style='margin-right: 10px; margin-top: 5px;' class="btn btn-primary btn-qrcodeg">Generate QR</button></a><button style='margin-right: 10px; margin-top: 5px;' class="btn btn-primary btn-delete">Remove from Favourite</button></p>`
     thingsList.insertAdjacentHTML('beforeend', tr);
 
     // Click Generate QR code
@@ -83,6 +94,29 @@ const renderUser = doc => {
 auth.onAuthStateChanged(user => {
     if (user) {
         thingsRef = db.collection('favourites')
+        // createThing.onclick = () => {
+
+        //     // const { serverTimestamp } = firebase.firestore.FieldValue;
+        //     const get = (param) => document.getElementById(`${param}`);
+        //     var pdata = JSON.parse(sessionStorage.getItem("pdata"))
+        //     // console.log(thingsRef.where('favourite', '!=', pdata.login).get())
+        //     // console.log(pdata)
+        //     thingsRef.where('login', '==', pdata.login).get().then(res => {
+        //         console.log(res.size);
+        //         if (res.size === 0) {
+        //             thingsRef
+        //                 .add({
+        //                     uid: user.uid,
+        //                     login: pdata.login,
+        //                     name: pdata.name,
+        //                     html_url: pdata.html_url,
+        //                     avatar_url: pdata.avatar_url
+        //                 });
+        //         }
+        //     })
+
+
+        // }
 
         // Query
         unsubscribe = thingsRef
