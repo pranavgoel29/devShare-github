@@ -82,7 +82,7 @@ auth.onAuthStateChanged(user => {
             var pdata = JSON.parse(sessionStorage.getItem("pdata"))
             // console.log(thingsRef.where('favourite', '!=', pdata.login).get())
             // console.log(pdata)
-            thingsRef.where('login', '==', pdata.login).get().then(res => {
+            thingsRef.where('uid', '==', user.uid).where('login', '==', pdata.login).get().then(res => {
                 console.log(res.size);
                 if (res.size === 0) {
                     thingsRef
