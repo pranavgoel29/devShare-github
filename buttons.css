@@ -38,9 +38,11 @@
 .btn-firebase{
   margin-top: .5rem;
   margin-bottom: 1rem;
+  padding: 1rem;
 }
 
 .btn-child-firebase {
   display: inline-block;
   vertical-align: middle;
+  font-size: 1rem;
 }
