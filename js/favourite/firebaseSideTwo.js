@@ -58,7 +58,7 @@ let unsubscribe;
 
 const renderUser = doc => {
     console.log(doc.data())
-    const tr = `<p style='margin-top: 10px; margin-bottom: 20px;' data-id='${doc.id}' >Handle: ${doc.data().login}<br><a href="./qr-code.html"><button style='margin-left: 10px;' class="btn btn-primary btn-qrcodeg">Generate QR</button></a><button style='margin-left: 10px;' class="btn btn-primary btn-delete">Remove from Favourite</button></p>`
+    const tr = `<p style='margin-top: 10px;' data-id='${doc.id}' >Handle: ${doc.data().login}<br><div style="margin-top: 5px;"><a href="./qr-code.html"><button style='margin-right: 10px;' class="btn btn-primary btn-qrcodeg">Generate QR</button></a><button style='margin-right: 10px;' class="btn btn-primary btn-delete">Remove from Favourite</button></div></p>`
     thingsList.insertAdjacentHTML('beforeend', tr);
 
     // Click Generate QR code

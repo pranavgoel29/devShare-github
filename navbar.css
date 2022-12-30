@@ -52,9 +52,16 @@ ul {
     gap: 10px;
 }
 
+.nav-item svg{
+    fill: var(--txt-high-contrast);
+    width: 1rem;
+    height: 1rem;
+}
+
 .nav-item {
     color: var(--txt-high-contrast);
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     transition: all 0.3s ease-in-out;
     z-index: 10;
     white-space: nowrap;
@@ -75,13 +82,18 @@ ul {
     transform: scaleX(1);
 } */
 
-.nav-item:hover{
-    color: var(--theme-switch-btn-hover);
+.nav-item svg:hover{
+    fill: var(--theme-switch-btn-hover);
+}
+
+.active svg{
+    fill: var(--nav-active);
+    width: 1rem;
+    height: 1rem;
 }
 
 .active {
     position: relative;
-    color: var(--nav-active);
     --bc: #264653;
 }
 
