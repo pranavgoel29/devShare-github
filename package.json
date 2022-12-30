@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "easyqrcodejs": "^4.4.13"
+    "firebase": "^9.15.0"
   }
 }

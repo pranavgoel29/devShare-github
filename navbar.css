@@ -1,0 +1,121 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+    display: grid;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    /* background-color: #ecf0f1; */
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fafbfb;
+}
+
+.nav-item a{
+    color: var(--btn);
+  }
+
+.navbar {
+    position: fixed;
+    margin-top: 20px;
+    display: flex;
+    top: 0px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav {
+    display: flex;
+    margin: auto;
+    gap: 10px;
+}
+
+.nav-item {
+    color: var(--txt-high-contrast);
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    transform: scaleX(0);
+}
+
+/* .main-nav:hover~.indicator {
+    transform: scaleX(1);
+} */
+
+.nav-item:hover{
+    color: var(--theme-switch-btn-hover);
+}
+
+.active {
+    position: relative;
+    color: var(--nav-active);
+    --bc: #264653;
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 10%;
+    width: 80%;
+    height: 4px;
+    /* color: aqua; */
+    background-color: var(--bc);
+    animation: fade 300ms ease-in-out forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* logo */
+.logo
+{
+  font-size:2em;
+  font-weight:bold;
+}
+
+
+/* .nav-links{
+    margin-right: 8rem;
+    margin-left: 8rem;
+} */

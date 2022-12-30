@@ -23,10 +23,13 @@
 }
 
 * {
+    transition: all 0.2s ease-in-out;
+    font-family: 'Space Mono', monospace;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Space Mono", monospace;
 }
 
 .title{
@@ -43,13 +46,18 @@ body {
     background-color: var(--lm-bg-qr);
     font-size: 13px;
     color: var(--lm-text-qr);
-    width: 100%;
-    position: relative;
-    height: 100vh;
-
+    /* width: 100%; */
+    /* position: relative; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 75px 96px;
 }
 
+
 #subcode{
+    color: var(--qr-subcode);
     margin-top: 20px;
 }
 
@@ -72,7 +80,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #1E2A47;
+    background-color: var(--qr-cardp);
     padding: 18px;
     border-radius: 15px;
 }
@@ -81,7 +89,7 @@ body {
     margin-bottom: 10px;
     padding: 20px;
     /* border-radius: 20px; */
-    background-color: #141d2f;
+    background-color: var(--bg);
 }
 
 #btn-back{
@@ -112,6 +120,16 @@ body {
     transform: scale(0.975);
   }
 
+.nav-links{
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+/* .btnq{
+    margin-left: 2.5rem;
+    
+} */
+
 #card img {
     width: 260px;
     border-radius: 15px;
@@ -126,12 +144,13 @@ h3 {
 
 p #subcode{
     text-align: center;
-    color: hsl(220, 15%, 55%);
+    color: var(--qr-subcode);
     margin-bottom: 13px;
 }
 
 .attribution {
     margin-top: 40px;
+    color: var(--txt-mid-contrast);
     font-size: 11px;
     text-align: center;
 }

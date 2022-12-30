@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Github user search app" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="search.css" />
+    <link rel="stylesheet" href="buttons.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Space+Mono:regular,italic,700,700italic"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>Favourites | devShare share GitHub profiles</title>
+
+    <meta
+      name="description"
+      content="devShare generate QR-Code for your GitHub profile after you search for it. You can even get a card PNG to make it easy to share. Comes with dark and light modes."
+    />
+    <meta name="url" content="https://sharedev.vercel.app/" />
+
+    <!-- Primary Meta Tags -->
+
+    <meta name="title" content="Home | devShare share GitHub profiles" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sharedev.vercel.app/" />
+    <meta property="og:title" content="devShare share GitHub profiles" />
+    <meta
+      property="og:description"
+      content="devShare generates QR-Code for your GitHub profile after you search for it. You can even get a PNG card, easy to share. With dark and light modes."
+    />
+    <meta
+      property="og:image"
+      content="https://sharedev.vercel.app/assets/preview.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sharedev.vercel.app/" />
+    <meta property="twitter:title" content="devShare share GitHub profiles" />
+    <meta
+      property="twitter:description"
+      content="devShare generates QR-Code for your GitHub profile after you search for it. You can even get a PNG card, easy to share. With dark and light modes."
+    />
+    <meta
+      property="twitter:image"
+      content="https://sharedev.vercel.app/assets/preview.png"
+    />
+
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+
+    <script>
+      // Import the functions you need from the SDKs you need
+      // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+      // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyD2pW6_mx1svtC14yUL-O2y-tldpkTJVeY",
+        authDomain: "devshare-22a82.firebaseapp.com",
+        projectId: "devshare-22a82",
+        storageBucket: "devshare-22a82.appspot.com",
+        messagingSenderId: "86098585581",
+        appId: "1:86098585581:web:09b19a085b4fd3bbff29e4",
+        measurementId: "G-5F1DSG04XD",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      // const analytics = getAnalytics(app);
+    </script>
+
+    <!-- <script src="firebaseSide.js" defer></script> -->
+    <script src="./js/favourite/firebaseSideTwo.js" defer></script>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="container">
+
+        <nav>
+            <header>
+              <b class="header-logo">devShare</b>
+            <div class="nav-links">
+            <ul class="main-nav">
+              <li class="nav-item "><a href="./index.html">Home</a></li>
+              <li class="nav-item active"><a href="./favourite.html">Favourites</a></li>
+            </ul>
+          </div>
+            <div class="indicator"></div>
+            
+              
+              <!-- <i style="font-size: 20px; font-weight: 700; color: rgb(164, 213, 255);">Home</i> -->
+              <button class="header-theme-switch-btn body-s" onclick="switchTheme()">
+                <span id="theme-switch-text">Dark</span>
+                <svg
+                  class="header-theme-icon"
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="moon"
+                >
+                  <path
+                    d="M19.513 11.397a.701.701 0 00-.588.128 7.496 7.496 0 01-2.276 1.336 7.101 7.101 0 01-2.583.462 7.505 7.505 0 01-5.32-2.209 7.568 7.568 0 01-2.199-5.342c0-.873.154-1.72.41-2.49a6.904 6.904 0 011.227-2.21.657.657 0 00-.102-.924.701.701 0 00-.589-.128C5.32.61 3.427 1.92 2.072 3.666A10.158 10.158 0 000 9.83c0 2.8 1.125 5.342 2.967 7.19a10.025 10.025 0 007.16 2.98c2.353 0 4.527-.822 6.266-2.183a10.13 10.13 0 003.58-5.624.623.623 0 00-.46-.796z"
+                    fill="#697C9A"
+                    fill-rule="nonzero"
+                  />
+                </svg>
+                <svg
+                  class="header-theme-icon hidden"
+                  width="20"
+                  height="20"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="sun"
+                >
+                  <g fill="#FFF" fill-rule="nonzero">
+                    <path
+                      d="M13.545 6.455c-.9-.9-2.17-1.481-3.545-1.481a4.934 4.934 0 00-3.545 1.481c-.9.9-1.481 2.17-1.481 3.545 0 1.376.582 2.646 1.481 3.545.9.9 2.17 1.481 3.545 1.481a4.934 4.934 0 003.545-1.481c.9-.9 1.481-2.17 1.481-3.545a4.934 4.934 0 00-1.481-3.545zM10 3.413a.7.7 0 00.688-.688V.688A.7.7 0 0010 0a.7.7 0 00-.688.688v2.037a.7.7 0 00.688.688zM15.635 5.344l1.455-1.455a.67.67 0 000-.952.67.67 0 00-.952 0l-1.455 1.455a.67.67 0 000 .952c.238.264.66.264.952 0zM19.312 9.312h-2.037a.7.7 0 00-.688.688.7.7 0 00.688.688h2.037A.7.7 0 0020 10a.7.7 0 00-.688-.688zM15.608 14.656a.67.67 0 00-.952 0 .67.67 0 000 .952l1.455 1.455a.67.67 0 00.952 0 .67.67 0 000-.952l-1.455-1.455zM10 16.587a.7.7 0 00-.688.688v2.037A.7.7 0 0010 20a.7.7 0 00.688-.688v-2.037a.7.7 0 00-.688-.688zM4.365 14.656L2.91 16.111a.67.67 0 000 .952.67.67 0 00.952 0l1.455-1.455a.67.67 0 000-.952c-.238-.264-.66-.264-.952 0zM3.413 10a.7.7 0 00-.688-.688H.688A.7.7 0 000 10a.7.7 0 00.688.688h2.037A.7.7 0 003.413 10zM4.365 5.344a.67.67 0 00.952 0 .67.67 0 000-.952L3.862 2.937a.67.67 0 00-.952 0 .67.67 0 000 .952l1.455 1.455z"
+                    />
+                  </g>
+                </svg>
+              </button>
+            </header>
+          </nav>
+    
+<!-- 
+        <a href="./index.html">
+            <button class="btn btn-primary btncustom btn-firebase">Home</button></a
+          > -->
+        <!-- <header>
+            <b class="header-logo">devShare</b>
+            <i style="font-size: 20px; font-weight: 700; color: rgb(164, 213, 255);">Favourites</i>
+            <button class="header-theme-switch-btn body-s" onclick="switchTheme()">
+              <span id="theme-switch-text">Dark</span>
+              <svg
+                class="header-theme-icon"
+                width="20"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+                id="moon"
+              >
+                <path
+                  d="M19.513 11.397a.701.701 0 00-.588.128 7.496 7.496 0 01-2.276 1.336 7.101 7.101 0 01-2.583.462 7.505 7.505 0 01-5.32-2.209 7.568 7.568 0 01-2.199-5.342c0-.873.154-1.72.41-2.49a6.904 6.904 0 011.227-2.21.657.657 0 00-.102-.924.701.701 0 00-.589-.128C5.32.61 3.427 1.92 2.072 3.666A10.158 10.158 0 000 9.83c0 2.8 1.125 5.342 2.967 7.19a10.025 10.025 0 007.16 2.98c2.353 0 4.527-.822 6.266-2.183a10.13 10.13 0 003.58-5.624.623.623 0 00-.46-.796z"
+                  fill="#697C9A"
+                  fill-rule="nonzero"
+                />
+              </svg>
+              <svg
+                class="header-theme-icon hidden"
+                width="20"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+                id="sun"
+              >
+                <g fill="#FFF" fill-rule="nonzero">
+                  <path
+                    d="M13.545 6.455c-.9-.9-2.17-1.481-3.545-1.481a4.934 4.934 0 00-3.545 1.481c-.9.9-1.481 2.17-1.481 3.545 0 1.376.582 2.646 1.481 3.545.9.9 2.17 1.481 3.545 1.481a4.934 4.934 0 003.545-1.481c.9-.9 1.481-2.17 1.481-3.545a4.934 4.934 0 00-1.481-3.545zM10 3.413a.7.7 0 00.688-.688V.688A.7.7 0 0010 0a.7.7 0 00-.688.688v2.037a.7.7 0 00.688.688zM15.635 5.344l1.455-1.455a.67.67 0 000-.952.67.67 0 00-.952 0l-1.455 1.455a.67.67 0 000 .952c.238.264.66.264.952 0zM19.312 9.312h-2.037a.7.7 0 00-.688.688.7.7 0 00.688.688h2.037A.7.7 0 0020 10a.7.7 0 00-.688-.688zM15.608 14.656a.67.67 0 00-.952 0 .67.67 0 000 .952l1.455 1.455a.67.67 0 00.952 0 .67.67 0 000-.952l-1.455-1.455zM10 16.587a.7.7 0 00-.688.688v2.037A.7.7 0 0010 20a.7.7 0 00.688-.688v-2.037a.7.7 0 00-.688-.688zM4.365 14.656L2.91 16.111a.67.67 0 000 .952.67.67 0 00.952 0l1.455-1.455a.67.67 0 000-.952c-.238-.264-.66-.264-.952 0zM3.413 10a.7.7 0 00-.688-.688H.688A.7.7 0 000 10a.7.7 0 00.688.688h2.037A.7.7 0 003.413 10zM4.365 5.344a.67.67 0 00.952 0 .67.67 0 000-.952L3.862 2.937a.67.67 0 00-.952 0 .67.67 0 000 .952l1.455 1.455z"
+                  />
+                </g>
+              </svg>
+            </button>
+          </header> -->
+
+      <div class="firebase">
+        
+        <div id="whenSignedOut">
+          <button id="signInBtn" class="btn btn-primary btn-firebase">
+            <div class="btn-child-firebase"><img src="./assets/googlebg.png" width="30px" height="30px" style="margin-bottom:0px; margin-top:5px;"/></div>
+            <div class="btn-child-firebase">Sign in with Google</div>
+          </button>
+          <h3 class="orHeading">OR</h3>
+        </div>
+        <div id="whenSignedIn" hidden="true">
+          <div id="userDetails" class="body"></div>
+          <button id="signOutBtn" class="btn btn-primary btn-firebase">
+            Sign Out
+          </button>
+
+          <p id="thingsList"></p>
+          
+        </div>
+      </div>
+    </div>
+    <script src="./js/favourite/favouritemain.js"></script>
+  </body>
+</html>
