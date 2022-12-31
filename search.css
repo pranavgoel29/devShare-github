@@ -34,7 +34,7 @@ body.dark-theme .search-container {
 
 .search-error {
   color: var(--error);
-  margin-right: 24px;
+  margin-right: 6px;
   font-weight: 700;
   min-width: 80px;
 }
@@ -53,6 +53,6 @@ body.dark-theme .search-container {
 
   .search-input {
     font-size: 0.813rem;
-    margin-right: 9px;
+    margin-right: 5px;
   }
 }

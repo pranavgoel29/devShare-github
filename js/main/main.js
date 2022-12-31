@@ -14,27 +14,23 @@ function submitForm(e) {
 }
 
 // Fetch user by username with github API
-function fetchUser(username) {
+async function fetchUser(username) {
   SearchError.classList.add('hidden');
-  fetch(`https://api.github.com/users/${username}`)
-    .then((response) => response.json())
-    .then((parsedResponse) => {
-      updateDOM(parsedResponse);
-      // const parsedResponse = await response.json();
-      console.log(parsedResponse)
-      sessionStorage.setItem("pdata", JSON.stringify(parsedResponse));
-    })
-    // if (!response.ok) {
-    //   return SearchError.classList.remove('hidden');
-    // }
 
-    // return updateDOM(parsedResponse);
+  try {
+    const response = await fetch(`https://api.github.com/users/${username}`);
+    const parsedResponse = await response.json();
 
-    .catch((err) => {
-      return console.log(err);
-    });
+    if (!response.ok) {
+      return SearchError.classList.remove('hidden');
+    }
+
+    return updateDOM(parsedResponse);
+    sessionStorage.setItem("pdata", JSON.stringify(parsedResponse));
+  } catch (err) {
+    return console.log(err);
+  }
 }
-
 
 // Updates DOM with new user data
 function updateDOM(user) {
