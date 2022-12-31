@@ -22,17 +22,9 @@
     --btn-hover-qr: #60abff;
 }
 
-* {
-    /* transition: all 0.2s ease-in-out;
-    font-family: 'Space Mono', monospace;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    margin: 0;
-    padding: 0; */
-}
 
-.title{
+
+.title {
     margin-bottom: 30px;
 }
 
@@ -44,7 +36,7 @@
 
 
 
-#subcode{
+#subcode {
     color: var(--qr-subcode);
     margin-top: 20px;
     font-size: 13px;
@@ -74,14 +66,14 @@
     border-radius: 15px;
 }
 
-#cardp{
-    margin-bottom: 10px;
-    padding: 20px;
+#cardp {
+    /* margin-bottom: 10px; */
+    padding: 10px;
     /* border-radius: 20px; */
-    background-color: var(--bg);
+    /* background-color: var(--bg); */
 }
 
-#btn-back{
+#btn-back {
     text-decoration: none;
 }
 
@@ -100,14 +92,16 @@
     color: white;
     font-size: 14px;
     font-weight: bold;
-  }
-  .btnq:hover {
+}
+
+.btnq:hover {
     cursor: pointer;
     background-color: var(--btn-hover-qr);
-  }
-  .btnq:active {
+}
+
+.btnq:active {
     transform: scale(0.975);
-  }
+}
 
 
 
@@ -128,7 +122,7 @@ h3 {
     padding: 10px;
 }
 
-p #subcode{
+p #subcode {
     text-align: center;
     color: var(--qr-subcode);
     margin-bottom: 13px;
@@ -143,4 +137,52 @@ p #subcode{
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+.main-nav-card {
+    display: flex;
+    /* margin: auto; */
+    gap: 10px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.user-section-card {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* background-color: var(--qr-cardp); */
+    /* box-shadow: 0 16px 30px -10px rgba(70, 96, 187, 0.2); */
+    border-radius: 15px;
+    margin-bottom: 30px;
+    /* padding: 48px; */
+}
+
+body.dark-theme .user-section {
+    box-shadow: none;
+}
+
+@media (max-width: 840px) {
+    .user-section-card {
+        padding: 0px;
+        margin-bottom: 25px;
+    }
+
+    .main-nav-card {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+}
+
+@media (max-width: 650px) {
+    .user-section-card {
+        padding: 0px;
+        margin-bottom: 25px;
+    }
+
+    .main-nav-card {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }

@@ -40,8 +40,8 @@ auth.onAuthStateChanged(user => {
         whenSignedIn4.hidden = false;
         createThing.style.backgroundColor = "#0079ff";
         createThing.style.color = "#fff";
-        createThing.style.fontSize = '1rem';
-        createThing.style.padding = '13px 24px';
+        // createThing.style.fontSize = '1rem';
+        // createThing.style.padding = '13px 24px';
         createThing.innerText = 'Add to Favourites';
         createThing.disabled = false;
         // console.log(user)

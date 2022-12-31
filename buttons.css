@@ -18,13 +18,6 @@
   background-color: var(--primary-hover);
 }
 
-@media (max-width: 650px) {
-  .btn-primary {
-    font-size: 0.875rem;
-    padding: 12.5px 16px;
-  }
-}
-
 .btncustom{
   margin-top: 2rem;
   margin-right: 1rem;
@@ -38,7 +31,7 @@
 .btn-firebase{
   margin-top: .5rem;
   margin-bottom: 1rem;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .btn-child-firebase {
@@ -46,3 +39,11 @@
   vertical-align: middle;
   font-size: 1rem;
 }
+
+@media (max-width: 650px) {
+  .btn-primary {
+    font-size: 0.875rem;
+    padding: 12.5px 16px;
+  }
+}
+

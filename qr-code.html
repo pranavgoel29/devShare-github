@@ -110,7 +110,7 @@
         <b class="header-logo">devShare</b>
         <!-- <i style="font-size: 20px; font-weight: 700; color: rgb(164, 213, 255);">Home</i> -->
         <div>
-          <ul class="main-nav">
+          <ul class="main-nav-card">
             <li class="nav-item" id="whenSignedIn4" hidden="true">
               <a href="./index.html"
                 ><svg
@@ -169,22 +169,27 @@
         </button>
       </header>
 
-
-      <div id="cardp" style="margin: 20px 60px 20px 60px;">
-        <!-- <header class="header">
-          <h1 class="title">devShare</h1>
-        </header> -->
-        <div id="card">
-          <!-- <img src="images/image-qr-code.png" alt="Qr Code Image" srcset=""> -->
-          <div id="qrcode"></div>
-          <p id="subcode"></p>
+      <section class="user-section-card">
+        <!-- <div> -->
+        <div id="cardp">
+          <!-- <header class="header">
+            <h1 class="title">devShare</h1>
+          </header> -->
+          <div id="card">
+            <!-- <img src="images/image-qr-code.png" alt="Qr Code Image" srcset=""> -->
+            <div id="qrcode"></div>
+            <p id="subcode"></p>
+          </div>
         </div>
-      </div>
-      <!-- <div style="display: flex;">
-      <button class="btnq" onclick="myfunc()">Save QR code</button></a><button style='margin-left: 10px;' class="btn btn-primary btn-delete">Remove from Favourite</button>
-    </div> -->
-      <span>
+        <!-- <div style="display: flex;">
+        <button class="btnq" onclick="myfunc()">Save QR code</button></a><button style='margin-left: 10px;' class="btn btn-primary btn-delete">Remove from Favourite</button>
+      </div> -->
+        
        
+    <!-- </div> -->
+      </section>
+      <span>
+         
         <button class="btnq" onclick="myfunc()">Save QR code</button>
         <a href="/" id="btnBack">
           <button class="btnq">Go Back</button>
@@ -196,8 +201,6 @@
           >Pranav Goel</a
         >
       </div>
-    </div>
-
     <script type="text/javascript" src="./js/qrcode/qr-code.js"></script>
     <script src="./js/qrcode/qrcodeTheme.js"></script>
   </body>
