@@ -10,7 +10,7 @@
 
 body {
     display: grid;
-    height: 100vh;
+    /* height: 100vh; */
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     /* background-color: #ecf0f1; */
