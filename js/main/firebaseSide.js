@@ -11,6 +11,7 @@ const whenSignedIn4 = document.getElementById('whenSignedIn4');
 const whenSignedOut = document.getElementById('whenSignedOut');
 
 const createThing = document.getElementById('createThing');
+const generateQr = document.getElementById('generateQr');
 const thingsList = document.getElementById('thingsList');
 
 const userDetails = document.getElementById('userDetails');
@@ -44,6 +45,8 @@ auth.onAuthStateChanged(user => {
         // createThing.style.padding = '13px 24px';
         createThing.innerText = 'Add to Favourites';
         createThing.disabled = false;
+        createThing.classList.remove('btncustomfire');
+        generateQr.classList.remove('btncustomfire');
         // console.log(user)
         userDetails.innerText = `${user.displayName}`;
         
@@ -57,8 +60,10 @@ auth.onAuthStateChanged(user => {
         createThing.style.backgroundColor = "#4b6a9b";
         createThing.style.color = "#dcdcdc";
         createThing.style.cursor = 'default';
-        createThing.style.fontSize = '1rem';
-        createThing.style.padding = '13px 17px';
+        createThing.classList.add('btncustomfire');
+        generateQr.classList.add('btncustomfire');
+        // createThing.style.fontSize = '1rem';
+        // createThing.style.padding = '13px 17px';
         createThing.innerText += ' (disabled)';
         createThing.disabled = true;
     }
