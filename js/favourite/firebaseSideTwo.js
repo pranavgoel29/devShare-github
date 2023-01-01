@@ -82,7 +82,7 @@ auth.onAuthStateChanged(user => {
         thingsRef.where('uid', '==', user.uid).get().then(res => {
             console.log(res.size);
             if (res.size === 0) {
-                thingsList.insertAdjacentHTML('beforeend', '<h3>No favourites added yet</h3>');
+                thingsList.insertAdjacentHTML('beforeend', '<br><p class="orHeading">No favourites added yet to the list.</p>');
             }
         })
         unsubscribe = thingsRef

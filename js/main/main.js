@@ -7,7 +7,7 @@ const sunIcon = document.getElementById('sun');
 // Submit form
 function submitForm(e) {
   e.preventDefault();
-
+  document.getElementById('favouriteMsg').innerHTML = '';
   const githubUsername = document.getElementById('github-username').value;
 
   fetchUser(githubUsername);
