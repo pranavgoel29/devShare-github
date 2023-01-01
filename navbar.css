@@ -58,6 +58,12 @@ ul {
     height: 1rem;
 }
 
+svg{
+    fill: var(--txt-high-contrast);
+    width: 1rem;
+    height: 1rem;
+}
+
 .nav-item {
     color: var(--txt-high-contrast);
     padding-left: 10px;
