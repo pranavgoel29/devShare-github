@@ -24,9 +24,9 @@ async function fetchUser(username) {
     if (!response.ok) {
       return SearchError.classList.remove('hidden');
     }
-
-    return updateDOM(parsedResponse);
     sessionStorage.setItem("pdata", JSON.stringify(parsedResponse));
+    return updateDOM(parsedResponse);
+    
   } catch (err) {
     return console.log(err);
   }
