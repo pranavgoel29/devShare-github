@@ -58,8 +58,8 @@ ul {
     height: 1rem;
 }
 
-svg{
-    fill: var(--txt-high-contrast);
+.btncustom2 svg{
+    fill: white;
     width: 1rem;
     height: 1rem;
 }

@@ -79,11 +79,23 @@ auth.onAuthStateChanged(user => {
         thingsRef = db.collection('favourites')
 
         // Query
+        thingsRef.where('uid', '==', user.uid).get().then(res => {
+            console.log(res.size);
+            if (res.size === 0) {
+                thingsList.insertAdjacentHTML('beforeend', '<h3>No favourites added yet</h3>');
+            }
+        })
         unsubscribe = thingsRef
             .where('uid', '==', user.uid)
             .orderBy('login') // Requires a query
             .onSnapshot(querySnapshot => {
                 querySnapshot.docChanges().forEach(change => {
+                    thingsRef.where('uid', '==', user.uid).get().then(res => {
+                        console.log(res.size);
+                        if (res.size === 0) {
+                            thingsList.innerHTML= '<br><p class="orHeading">No favourites added yet to the list.</p>';
+                        }
+                    })
                     if (change.type === 'added') {
                         renderUser(change.doc);
                     }

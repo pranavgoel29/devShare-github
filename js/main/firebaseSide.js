@@ -9,6 +9,7 @@ const whenSignedIn2 = document.getElementById('whenSignedIn2');
 const whenSignedIn3 = document.getElementById('whenSignedIn3');
 const whenSignedIn4 = document.getElementById('whenSignedIn4');
 const whenSignedOut = document.getElementById('whenSignedOut');
+const favouriteMsg = document.getElementById('favouriteMsg');
 
 const createThing = document.getElementById('createThing');
 const generateQr = document.getElementById('generateQr');
@@ -52,8 +53,8 @@ auth.onAuthStateChanged(user => {
         whenSignedIn.hidden = true;
         whenSignedOut.hidden = false;
         whenSignedIn2.hidden = false;
-        whenSignedIn3.hidden = true;
-        whenSignedIn4.hidden = true;
+        // whenSignedIn3.hidden = true;
+        // whenSignedIn4.hidden = true;
         createThing.style.backgroundColor = "#4b6a9b";
         createThing.style.color = "#dcdcdc";
         createThing.style.cursor = 'default';
@@ -78,13 +79,14 @@ auth.onAuthStateChanged(user => {
         createThing.onclick = () => {
 
             // const { serverTimestamp } = firebase.firestore.FieldValue;
-            const get = (param) => document.getElementById(`${param}`);
+            // const get = (param) => document.getElementById(`${param}`);
             var pdata = JSON.parse(sessionStorage.getItem("pdata"))
             // console.log(thingsRef.where('favourite', '!=', pdata.login).get())
             // console.log(pdata)
             thingsRef.where('uid', '==', user.uid).where('login', '==', pdata.login).get().then(res => {
                 console.log(res.size);
                 if (res.size === 0) {
+                    favouriteMsg.innerText = 'Added to favourites';
                     thingsRef
                         .add({
                             uid: user.uid,
@@ -93,6 +95,9 @@ auth.onAuthStateChanged(user => {
                             html_url: pdata.html_url,
                             avatar_url: pdata.avatar_url
                         });
+                }
+                else{
+                    favouriteMsg.innerText = 'Already Added';
                 }
             })
 
