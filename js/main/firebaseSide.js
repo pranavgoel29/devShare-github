@@ -34,6 +34,12 @@ signOutBtn.onclick = () => {
 }
 
 const setTheme = () => {
+    const x = window.matchMedia("(max-width: 650px)")
+    if (x.matches) { // If media query matches
+      document.body.style.padding = "32px 24px 80px 24px";
+      document.body.style.height = "";
+
+    } 
     loaderContainer.style = "display: none"
 }
 
@@ -51,7 +57,7 @@ auth.onAuthStateChanged(user => {
         createThing.classList.remove('btncustomfire');
         generateQr.classList.remove('btncustomfire');
         userDetails.innerText = `${user.displayName}`;
-        loaderContainer.style = "display: none";
+        setTimeout(setTheme, 0)
     } else {
         // not signed in
         whenSignedIn.hidden = true;

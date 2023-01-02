@@ -29,6 +29,17 @@ signOutBtn.onclick = () => {
 }
 
 
+const setTheme = () => {
+    const x = window.matchMedia("(max-width: 650px)")
+    if (x.matches) { // If media query matches
+      document.body.style.padding = "32px 24px 80px 24px";
+      document.body.style.height = "";
+
+    } 
+    loaderContainer.style = "display: none"
+}
+
+
 auth.onAuthStateChanged(user => {
     if (user) {
         // signed in
@@ -87,7 +98,8 @@ auth.onAuthStateChanged(user => {
             console.log(res.size);
             if (res.size === 0) {
                 thingsList.insertAdjacentHTML('beforeend', '<br><p class="orHeading">No favourites added yet to the list.</p>');
-                loaderContainer.style = "display: none";
+                // loaderContainer.style = "display: none";
+                setTimeout(setTheme, 0)
             }
         })
         unsubscribe = thingsRef
@@ -100,7 +112,8 @@ auth.onAuthStateChanged(user => {
                         if (res.size === 0) {
                             thingsList.innerHTML= '<br><p class="orHeading">No favourites added yet to the list.</p>';
                         }
-                        loaderContainer.style = "display: none";
+                        // loaderContainer.style = "display: none";
+                        setTimeout(setTheme, 0)
                     })
                     if (change.type === 'added') {
                         renderUser(change.doc);
@@ -116,7 +129,8 @@ auth.onAuthStateChanged(user => {
     } else {
         // Unsubscribe when the user signs out
         unsubscribe && unsubscribe();
-        loaderContainer.style = "display: none";
+        // loaderContainer.style = "display: none";
+        setTimeout(setTheme, 0)
     }
 });
 
