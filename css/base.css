@@ -40,7 +40,7 @@ body {
   align-items: center;
   background-color: var(--bg);
   min-height: 100vh;
-  padding: 75px 96px;
+  /* padding: 75px 96px; */
 
   /* Lightmode */
   --primary: #0079ff;

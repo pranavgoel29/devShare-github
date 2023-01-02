@@ -12,6 +12,7 @@ const whenSignedOut = document.getElementById('whenSignedOut');
 const thingsList = document.getElementById('thingsList');
 
 const userDetails = document.getElementById('userDetails');
+const loaderContainer = document.querySelector('.loader-container');
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -31,14 +32,17 @@ signOutBtn.onclick = () => {
 auth.onAuthStateChanged(user => {
     if (user) {
         // signed in
+        
         whenSignedIn.hidden = false;
         whenSignedOut.hidden = true;
         userDetails.innerHTML = `<img style='padding: 20px; border-radius: 50%;' src=${user.photoURL} referrerpolicy="no-referrer"/><div>${user.displayName}</div>`;
-        
+        // loaderContainer.style = "display: none";
     } else {
         // not signed in
+        
         whenSignedIn.hidden = true;
         whenSignedOut.hidden = false;
+        // loaderContainer.style = "display: none";
     }
 });
 
@@ -83,6 +87,7 @@ auth.onAuthStateChanged(user => {
             console.log(res.size);
             if (res.size === 0) {
                 thingsList.insertAdjacentHTML('beforeend', '<br><p class="orHeading">No favourites added yet to the list.</p>');
+                loaderContainer.style = "display: none";
             }
         })
         unsubscribe = thingsRef
@@ -95,6 +100,7 @@ auth.onAuthStateChanged(user => {
                         if (res.size === 0) {
                             thingsList.innerHTML= '<br><p class="orHeading">No favourites added yet to the list.</p>';
                         }
+                        loaderContainer.style = "display: none";
                     })
                     if (change.type === 'added') {
                         renderUser(change.doc);
@@ -110,6 +116,7 @@ auth.onAuthStateChanged(user => {
     } else {
         // Unsubscribe when the user signs out
         unsubscribe && unsubscribe();
+        loaderContainer.style = "display: none";
     }
 });
 

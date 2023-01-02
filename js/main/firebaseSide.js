@@ -10,6 +10,8 @@ const whenSignedIn3 = document.getElementById('whenSignedIn3');
 const whenSignedIn4 = document.getElementById('whenSignedIn4');
 const whenSignedOut = document.getElementById('whenSignedOut');
 const favouriteMsg = document.getElementById('favouriteMsg');
+const loaderContainer = document.querySelector('.loader-container');
+
 
 const createThing = document.getElementById('createThing');
 const generateQr = document.getElementById('generateQr');
@@ -31,6 +33,9 @@ signOutBtn.onclick = () => {
     auth.signOut();
 }
 
+const setTheme = () => {
+    loaderContainer.style = "display: none"
+}
 
 auth.onAuthStateChanged(user => {
     if (user) {
@@ -45,9 +50,8 @@ auth.onAuthStateChanged(user => {
         createThing.disabled = false;
         createThing.classList.remove('btncustomfire');
         generateQr.classList.remove('btncustomfire');
-        // console.log(user)
         userDetails.innerText = `${user.displayName}`;
-        
+        loaderContainer.style = "display: none";
     } else {
         // not signed in
         whenSignedIn.hidden = true;
@@ -62,6 +66,7 @@ auth.onAuthStateChanged(user => {
         generateQr.classList.add('btncustomfire');
         createThing.innerText += ' (disabled)';
         createThing.disabled = true;
+        setTimeout(setTheme, 400)
     }
 });
 

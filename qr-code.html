@@ -4,7 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-
+    <link rel="stylesheet" href="./css/qrstyle.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/search.css" />
+    <link rel="stylesheet" href="./css/buttons.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/loader.css" />
     <link
       rel="icon"
       type="image/png"
@@ -63,12 +69,7 @@
       charset="utf-8"
     ></script>
     <!-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> -->
-    <link rel="stylesheet" href="./css/qrstyle.css" />
-    <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/search.css" />
-    <link rel="stylesheet" href="./css/buttons.css" />
-    <link rel="stylesheet" href="./css/navbar.css" />
+    
     <!-- <script src="./html2canvas.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -96,6 +97,9 @@
   </head>
 
   <body>
+    <div class="loader-container">
+      <div class="spinner">Loading...</div>
+  </div>
     <div class="container">
       <header>
         <a href="./">
@@ -188,6 +192,6 @@
         >
       </div>
     <script type="text/javascript" src="./js/qrcode/qr-code.js"></script>
-    <script src="./js/qrcode/qrcodeTheme.js"></script>
+    <script src="./js/theme.js"></script>
   </body>
 </html>

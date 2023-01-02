@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Github user search app" />
+    <meta name="description" content="devShare generate QR-Code for your GitHub profile after you search for it. You can even get a card PNG to make it easy to share. Comes with dark and light modes."/>
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/search.css" />
     <link rel="stylesheet" href="./css/buttons.css" />
     <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/loader.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Space+Mono:regular,italic,700,700italic"
       rel="stylesheet"
@@ -80,6 +81,9 @@
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="loader-container">
+      <div class="spinner">Loading...</div>
+  </div>
     <div class="container">
       
       <header>
@@ -145,8 +149,7 @@
           </svg>
         </button>
       </header>
-
-      
+      <script src="./js/theme.js"></script>
       <div class="firebase">
         <div id="whenSignedOut">
           <button id="signInBtn" class="btn btn-primary btn-firebase">
@@ -324,5 +327,6 @@
       </main>
     </div>
     <script src="./js/main/main.js"></script>
+    
   </body>
 </html>
