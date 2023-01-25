@@ -3,10 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="devShare generate QR-Code for your GitHub profile after you search for it. You can even get a card PNG to make it easy to share. Comes with dark and light modes."
-    />
+    <meta name="description" content="devShare generate QR-Code for your GitHub profile after you search for it. You can even get a card PNG to make it easy to share. Comes with dark and light modes."/>
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/search.css" />
@@ -64,8 +61,16 @@
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
 
-    <script type="module">
-      import firebaseConfig from "./js/apikey.js";
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyD2pW6_mx1svtC14yUL-O2y-tldpkTJVeY",
+        authDomain: "devshare-22a82.firebaseapp.com",
+        projectId: "devshare-22a82",
+        storageBucket: "devshare-22a82.appspot.com",
+        messagingSenderId: "86098585581",
+        appId: "1:86098585581:web:09b19a085b4fd3bbff29e4",
+        measurementId: "G-5F1DSG04XD",
+      };
 
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
@@ -74,14 +79,16 @@
     <script src="./js/favourite/firebaseSideTwo.js" defer></script>
   </head>
 
-  <body style="height: 100vh">
+  <body style="height: 100vh;">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div class="loader-container">
       <div class="spinner">Loading...</div>
-    </div>
+  </div>
     <div class="container">
+     
       <header>
-        <a href="./"> <b class="header-logo">devShare</b></a>
+        <a href="./">
+          <b class="header-logo">devShare</b></a>
         <!-- <i style="font-size: 20px; font-weight: 700; color: rgb(164, 213, 255);">Home</i> -->
         <div>
           <ul class="main-nav">
@@ -95,10 +102,9 @@
                 >
                   <path
                     d="M8,1L1,6v9h5v-4c0-1.105,0.895-2,2-2s2,0.895,2,2v4h5V6L8,1z"
-                  /></svg
-              ></a>
+                  /></svg></a>
             </li>
-            <li class="nav-item active" id="whenSignedIn3">
+            <li class="nav-item  active" id="whenSignedIn3">
               <a href="./favourite.html">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -107,9 +113,9 @@
                   viewBox="0 0 16 16"
                 >
                   <path
+                    
                     d="M11.434 1a4.604 4.604 0 00-3.226 1.322L8 2.527l-.208-.205A4.589 4.589 0 004.566 1 4.589 4.589 0 001.34 2.322 4.5 4.5 0 000 5.522a4.5 4.5 0 001.34 3.2l6.133 6.061a.75.75 0 001.054 0l6.132-6.06a4.52 4.52 0 00.992-1.467 4.482 4.482 0 00-.992-4.934A4.604 4.604 0 0011.433 1z"
-                  /></svg
-              ></a>
+                  /></svg></a>
             </li>
           </ul>
         </div>
@@ -145,21 +151,13 @@
       </header>
       <script src="./js/theme.js"></script>
       <div class="firebase">
+        
         <div id="whenSignedOut">
           <button id="signInBtn" class="btn btn-primary btn-firebase">
-            <div class="btn-child-firebase">
-              <img
-                src="./assets/googlebg.png"
-                width="30px"
-                height="30px"
-                style="margin-bottom: 0px; margin-top: 5px"
-              />
-            </div>
+            <div class="btn-child-firebase"><img src="./assets/googlebg.png" width="30px" height="30px" style="margin-bottom:0px; margin-top:5px;"/></div>
             <div class="btn-child-firebase">Sign in with Google</div>
           </button>
-          <h3 class="orHeading" style="font-size: 1rem">
-            Sign-in to use this feature
-          </h3>
+          <h3 class="orHeading" style="font-size: 1rem;">Sign-in to use this feature</h3>
         </div>
         <div id="whenSignedIn" hidden="true">
           <div id="userDetails" class="body"></div>
@@ -168,6 +166,7 @@
           </button>
 
           <p id="thingsList"></p>
+          
         </div>
       </div>
     </div>
