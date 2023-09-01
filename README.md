@@ -13,7 +13,7 @@ There are two modes of the application, one is logged in and second is not logge
 
 - Light/dark mode toggle
 - Favourites
-- QR-code generation of GitHub profile
+- QR-Code generation of GitHub profile
 
 
 ## 📦About Project
